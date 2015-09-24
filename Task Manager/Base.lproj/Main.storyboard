@@ -20,11 +20,11 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="Deadline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbx-0G-2Ih">
-                                            <rect key="frame" x="487" y="11" width="67" height="25"/>
+                                            <rect key="frame" x="501" y="11" width="52.5" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="123" id="JKJ-ir-npB"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
@@ -33,6 +33,13 @@
                                                 </mask>
                                             </variation>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black" translatesAutoresizingMaskIntoConstraints="NO" id="QgU-IT-w4L">
+                                            <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="A8Q-TQ-QQl"/>
+                                                <constraint firstAttribute="width" constant="30" id="Cfb-OR-o4n"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Název" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPi-UM-7xO">
                                             <rect key="frame" x="46" y="10" width="62.5" height="28"/>
                                             <constraints>
@@ -49,23 +56,23 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRu-mg-CPl">
+                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kw1-6r-BcW" customClass="CheckBox" customModule="Task_Manager" customModuleProvider="target">
+                                            <rect key="frame" x="315" y="9" width="46" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="46" id="abm-C2-Tmt"/>
+                                                <constraint firstAttribute="height" constant="30" id="hzc-3I-kip"/>
+                                            </constraints>
+                                            <state key="normal" title="Button">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRu-mg-CPl" customClass="CheckBox" customModule="Task_Manager" customModuleProvider="target">
                                             <rect key="frame" x="562" y="9" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="f5y-KK-c9w"/>
                                                 <constraint firstAttribute="width" constant="30" id="qce-gR-XyL"/>
                                             </constraints>
-                                            <state key="normal">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black" translatesAutoresizingMaskIntoConstraints="NO" id="QgU-IT-w4L">
-                                            <rect key="frame" x="8" y="10" width="30" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="A8Q-TQ-QQl"/>
-                                                <constraint firstAttribute="width" constant="30" id="Cfb-OR-o4n"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="IPi-UM-7xO" firstAttribute="leading" secondItem="QgU-IT-w4L" secondAttribute="trailing" constant="8" id="3hI-uo-5j3"/>
@@ -81,6 +88,7 @@
                                         <constraint firstItem="Zbx-0G-2Ih" firstAttribute="top" secondItem="umv-5j-NPI" secondAttribute="topMargin" constant="4" id="Y6V-cH-vuo"/>
                                         <constraint firstItem="IPi-UM-7xO" firstAttribute="top" secondItem="Zbx-0G-2Ih" secondAttribute="top" id="aQ9-KB-nIO"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Zbx-0G-2Ih" secondAttribute="trailing" constant="-8" id="bPV-yf-tNk"/>
+                                        <constraint firstItem="Kw1-6r-BcW" firstAttribute="leading" secondItem="IPi-UM-7xO" secondAttribute="trailing" constant="206.5" id="dbX-cq-ccg"/>
                                         <constraint firstAttribute="centerY" secondItem="Zbx-0G-2Ih" secondAttribute="centerY" constant="0.5" id="rac-5n-gpS"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Zbx-0G-2Ih" secondAttribute="trailing" constant="14" id="s3i-pz-uMX"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Zbx-0G-2Ih" secondAttribute="bottom" constant="8.5" id="uGA-74-2nM"/>
@@ -99,7 +107,6 @@
                                 <connections>
                                     <outlet property="mainColor" destination="QgU-IT-w4L" id="SnT-vm-2Qj"/>
                                     <outlet property="mainDate" destination="Zbx-0G-2Ih" id="tsK-Zf-HI9"/>
-                                    <outlet property="mainIsDone" destination="iRu-mg-CPl" id="A6t-2E-S7v"/>
                                     <outlet property="mainName" destination="IPi-UM-7xO" id="qBc-wQ-mUZ"/>
                                     <segue destination="tBC-y7-6UB" kind="show" identifier="showDetailTask" id="15k-i3-uxw"/>
                                 </connections>
@@ -110,7 +117,9 @@
                             <outlet property="delegate" destination="tKp-z0-rtM" id="w8u-JM-cYj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tasks" id="Ern-FG-vp3"/>
+                    <navigationItem key="navigationItem" title="Tasks" id="Ern-FG-vp3">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Fdv-TB-gHp"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="taskTableView" destination="UAH-rG-doj" id="CK0-SF-57I"/>
                         <segue destination="y72-bQ-Cif" kind="presentation" identifier="showNewTask" id="s5o-dU-JwY"/>
@@ -121,7 +130,7 @@
             </objects>
             <point key="canvasLocation" x="247" y="278"/>
         </scene>
-        <!--New task-->
+        <!--Task settings-->
         <scene sceneID="SGC-34-nOq">
             <objects>
                 <viewController id="tBC-y7-6UB" customClass="TaskViewController" customModule="Task_Manager" customModuleProvider="target" sceneMemberID="viewController">
@@ -153,7 +162,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jl0-eo-HM5">
                                 <rect key="frame" x="113" y="151" width="236" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="click to set">
+                                <state key="normal" title="School">
                                     <color key="titleColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -162,6 +171,18 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59z-58-WHI">
                                 <rect key="frame" x="16" y="261" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUd-Ed-u8i">
+                                <rect key="frame" x="302" y="151" width="30" height="30"/>
+                            </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ym8-AO-IVM">
+                                <rect key="frame" x="96" y="341" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Turn on/off notification" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDH-tL-wak">
+                                <rect key="frame" x="16" y="294" width="173" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -176,22 +197,10 @@
                                     <segue destination="glS-KK-6sy" kind="presentation" identifier="showDate" id="PMx-4M-YiU"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUd-Ed-u8i">
-                                <rect key="frame" x="302" y="151" width="30" height="30"/>
-                            </imageView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ym8-AO-IVM">
-                                <rect key="frame" x="96" y="341" width="51" height="31"/>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Turn on/off notification" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDH-tL-wak">
-                                <rect key="frame" x="16" y="294" width="173" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New task" id="G69-K6-E5R">
+                    <navigationItem key="navigationItem" title="Task settings" id="G69-K6-E5R">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="VAE-iA-h1F">
                             <connections>
                                 <action selector="cancel:" destination="tBC-y7-6UB" id="eLW-80-brQ"/>
@@ -204,6 +213,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="categoryColorImage" destination="dUd-Ed-u8i" id="XBk-tu-NIJ"/>
                         <outlet property="categoryNewButton" destination="jl0-eo-HM5" id="VWn-D3-vQw"/>
                         <outlet property="dateNewButton" destination="rDU-Ro-wgE" id="6U6-ix-nbq"/>
                         <outlet property="saveNewTaskButton" destination="EXL-dH-KuX" id="xwy-er-8EP"/>
@@ -213,12 +223,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vEM-1b-0R0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="2nO-8F-Vtk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1711" y="-76"/>
+            <point key="canvasLocation" x="1667" y="278"/>
         </scene>
         <!--Date-->
         <scene sceneID="2lN-Hj-rl3">
             <objects>
-                <viewController title="Date" id="glS-KK-6sy" userLabel="Date" sceneMemberID="viewController">
+                <viewController title="Date" id="glS-KK-6sy" userLabel="Date" customClass="DatePickerViewController" customModule="Task_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="28d-U8-M94"/>
                         <viewControllerLayoutGuide type="bottom" id="J3r-Qh-Bbc"/>
@@ -227,12 +237,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="aj3-XU-qRm">
-                                <rect key="frame" x="0.0" y="219" width="600" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="463940894.50589299">
-                                    <!--2015-09-14 16:28:14 +0000-->
-                                </date>
-                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nh8-eC-f8S">
                                 <rect key="frame" x="141" y="389" width="159" height="35"/>
                                 <constraints>
@@ -242,6 +246,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancel:" destination="glS-KK-6sy" eventType="touchUpInside" id="LkR-WK-NK9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em7-pY-Nep">
                                 <rect key="frame" x="308" y="389" width="159" height="35"/>
@@ -251,7 +258,20 @@
                                 <state key="normal" title="Confirm">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirm:" destination="glS-KK-6sy" eventType="touchUpInside" id="t9X-xE-oYi"/>
+                                </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="aj3-XU-qRm">
+                                <rect key="frame" x="0.0" y="219" width="600" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="463940894.50589299">
+                                    <!--2015-09-14 16:28:14 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="cs_CZ"/>
+                                <connections>
+                                    <action selector="datePickerChanged:" destination="glS-KK-6sy" eventType="valueChanged" id="R23-c1-F7C"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -266,15 +286,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Date" id="eyt-O6-UF7"/>
+                    <connections>
+                        <outlet property="datePicker" destination="aj3-XU-qRm" id="djm-M7-T0e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pIe-gl-hfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2396" y="-472"/>
+            <point key="canvasLocation" x="2396" y="694"/>
         </scene>
         <!--Category-->
         <scene sceneID="t5K-7d-g5Y">
             <objects>
-                <viewController title="Category" id="UD1-x3-A9Z" userLabel="Category" customClass="PickerViewController" customModule="Task_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Category" id="UD1-x3-A9Z" userLabel="Category" customClass="CategoryPickerViewController" customModule="Task_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mc9-0X-baj"/>
                         <viewControllerLayoutGuide type="bottom" id="Bre-5p-PXi"/>
@@ -283,12 +306,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJJ-Qp-YWn">
-                                <rect key="frame" x="0.0" y="219" width="600" height="162"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoU-m1-kme">
+                                <rect key="frame" x="308" y="389" width="159" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="159" id="gHy-T3-5Fv"/>
+                                </constraints>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <outlet property="delegate" destination="UD1-x3-A9Z" id="abG-bS-6gA"/>
+                                    <action selector="confirm:" destination="UD1-x3-A9Z" eventType="touchUpInside" id="eg0-T2-uE2"/>
+                                    <segue destination="0UQ-Zm-x8u" kind="unwind" unwindAction="unwindToDetailFromPicker:" id="wAE-43-i6Q"/>
                                 </connections>
-                            </pickerView>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqJ-6g-hXi">
                                 <rect key="frame" x="141" y="389" width="159" height="35"/>
                                 <constraints>
@@ -302,18 +332,12 @@
                                     <action selector="cancel:" destination="UD1-x3-A9Z" eventType="touchUpInside" id="OUP-zk-NHu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoU-m1-kme">
-                                <rect key="frame" x="308" y="389" width="159" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="159" id="gHy-T3-5Fv"/>
-                                </constraints>
-                                <state key="normal" title="Confirm">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJJ-Qp-YWn">
+                                <rect key="frame" x="0.0" y="219" width="600" height="162"/>
                                 <connections>
-                                    <action selector="confirm:" destination="UD1-x3-A9Z" eventType="touchUpInside" id="eg0-T2-uE2"/>
+                                    <outlet property="delegate" destination="UD1-x3-A9Z" id="abG-bS-6gA"/>
                                 </connections>
-                            </button>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -328,10 +352,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Category" id="gZJ-eQ-asX"/>
+                    <connections>
+                        <outlet property="categoryPicker" destination="gJJ-Qp-YWn" id="Y0d-tL-wC7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oy0-5f-mrR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0UQ-Zm-x8u" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2396" y="183"/>
+            <point key="canvasLocation" x="2396" y="-61"/>
         </scene>
         <!--Settings-->
         <scene sceneID="wX0-DA-kJV">
@@ -372,7 +400,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfS-c6-l4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905" y="1377"/>
+            <point key="canvasLocation" x="247" y="1053"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="izO-DI-8TK">
@@ -390,7 +418,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O17-R9-OWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-631" y="358"/>
+            <point key="canvasLocation" x="-471" y="278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="21R-Eb-pde">
@@ -408,7 +436,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pI1-Hm-ZZq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055" y="558"/>
+            <point key="canvasLocation" x="967" y="762"/>
         </scene>
     </scenes>
     <resources>
