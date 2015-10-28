@@ -8,8 +8,32 @@
 
 import UIKit
 
-class DatePickerViewController: UIViewController {
+class DatePickerViewController: UIViewController, UIPickerViewDelegate {
 
+    let dateFormatter = NSDateFormatter()
+
+    weak var delegate: changeDateCategValuesDelegate?
+    var datum: String?
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBAction func cancel(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    @IBAction func datePickerChanged(sender: AnyObject) {
+    }
+    
+    @IBAction func confirm(sender: UIButton) {
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle        
+        datum = dateFormatter.stringFromDate(datePicker.date)
+        delegate?.changeDate(datum!)
+        dismissViewControllerAnimated(true, completion: nil)
+
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+// Abychom mohli predavat data z obou pickeru do taskviewcontrolleru a i z nej do categorypickerviewcontrolleru 
+protocol changeDateCategValuesDelegate: class {
+    func changeCategory(toValue: String)
+    func changeDate(toValue: String)
+}
+

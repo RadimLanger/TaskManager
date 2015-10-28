@@ -8,22 +8,23 @@
 
 import UIKit
 
-class TaskViewController: UIViewController, UITextFieldDelegate, changeDateCatValuesDelegate {
+class TaskViewController: UIViewController, UITextFieldDelegate, changeDateCategValuesDelegate {
 
     var task: Task?
-
+/*
+    var colorsArray = ["black.png","blue.png","brown.png","cyan.png"]
+*/
+    
     @IBOutlet weak var textFieldTaskName: UITextField! { didSet { textFieldTaskName.delegate = self } }
     @IBOutlet weak var categoryNewButton: UIButton!
     @IBOutlet weak var dateNewButton: UIButton!
     @IBOutlet weak var saveNewTaskButton: UIBarButtonItem!
-    @IBOutlet weak var cancelNewTaskButton: UIBarButtonItem!
+    @IBOutlet weak var categoryColorImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Jako prvni nam vyjede klavesnice, na nazev tasku
         textFieldTaskName.becomeFirstResponder()
-
         // Nastavime pohled, kdyz editujeme existujici task
         if let task = task {
             navigationItem.title = task.name
@@ -31,10 +32,11 @@ class TaskViewController: UIViewController, UITextFieldDelegate, changeDateCatVa
             categoryNewButton.setTitle(task.category, forState: UIControlState.Normal)
             dateNewButton.setTitle(task.date, forState: UIControlState.Normal)
         }
-        
         // Povolime tlacitko Save jen pokud neni prazdny nazev noveho tasku
         checkValidName()
         textFieldTaskName.delegate = self
+        // Nastavime obrazek/barvu kategorie
+        setColor()
     }
     
     // Mark: Navigation
@@ -58,17 +60,27 @@ class TaskViewController: UIViewController, UITextFieldDelegate, changeDateCatVa
             let categoryNew = categoryNewButton.currentTitle
             let dateNew = dateNewButton.currentTitle
             
-            task = Task(name: taskNew, date: dateNew!, color: "blue.png", category: categoryNew!, check: "unchecked", notification: false)
+            task = Task(name: taskNew!, date: dateNew!, color: setColor(), category: categoryNew!, check: false, checkImg: "unchecked.png", notification: false)
         }
-        // Pokud jdeme vybirat kategorii, chceme dostat vybranou hodnotu zpet pres delegate
+        // Pokud jdeme vybirat kategorii, musime poslat nazev stavajiciho tlacitka a chceme dostat vybranou hodnotu zpet pres delegate
         if(segue.identifier == "showCategory") {
-            var picker = (segue.destinationViewController as! PickerViewController)
+            let picker = (segue.destinationViewController as! CategoryPickerViewController)
+            // Posilame defaultni nazev tlacitka do categorypickerviewcontrolleru
+            picker.categorySelected = categoryNewButton.currentTitle!
+            picker.delegate = self
+        }
+        if(segue.identifier == "showDate") {
+            let picker = (segue.destinationViewController as! DatePickerViewController)
             picker.delegate = self
         }
         
     }
 
-    // Menime nazev tlacitka kategorie pri editu
+    // Menime datum
+    func changeDate(toValue: String) {
+        dateNewButton.setTitle(toValue, forState: UIControlState.Normal)
+    }
+    // Menime nazev tlacitka kategorie
     func changeCategory(toValue: String) {
         categoryNewButton.setTitle(toValue, forState: UIControlState.Normal)
     }
@@ -79,15 +91,40 @@ class TaskViewController: UIViewController, UITextFieldDelegate, changeDateCatVa
 
     func checkValidName() {
         // Tlacitko save povolime jen, kdyz uzivatel neco napise do nazvu tasku
-        saveNewTaskButton.enabled = !textFieldTaskName.text.isEmpty
+        saveNewTaskButton.enabled = !textFieldTaskName.text!.isEmpty
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
         checkValidName()
-        // Zmenime jeste titulek navigacniho baru pri zmene textu
+        // Zmenime jeste titulek navigacniho baru pri zmene textu a kliknuti jinam
         navigationItem.title = textField.text
     }
+
+    // Kdyz vybereme z pickeru kategorii, updatne se obrazek
+    @IBAction func unwindToDetailFromPicker(sender: UIStoryboardSegue) {
+        setColor()
+    }
     
+    // Menime obrazky kategorie (barvy), zatim natvrdo nastavene
+    func setColor() -> String {
+        switch categoryNewButton.currentTitle! {
+        case "Job":
+            categoryColorImage.image = UIImage(named: "black.png")
+            return "black.png"
+        case "School":
+            categoryColorImage.image = UIImage(named: "blue.png")
+            return "blue.png"
+        case "Home":
+            categoryColorImage.image = UIImage(named: "brown.png")
+            return "brown.png"
+        case "Free time":
+            categoryColorImage.image = UIImage(named: "green.png")
+            return "green.png"
+        default:
+            return ""
+        }
+    }
+
     // MARK: - Po tapnuti na return se klavesnice sama nevrati, pomocne fce, aby se vracela
     
     func textFieldShouldReturn(textField: UITextField) -> Bool{
@@ -96,8 +133,8 @@ class TaskViewController: UIViewController, UITextFieldDelegate, changeDateCatVa
         return true
     }
     // Po tapnuti jinde nez na klavesnici, se diky teto fci take vrati
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let touch = touches.first as? UITouch {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let _ = touches.first as UITouch! {
             self.view.endEditing(true)
         }
         super.touchesBegan(touches , withEvent:event)

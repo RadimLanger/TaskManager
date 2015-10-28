@@ -7,40 +7,82 @@
 //
 
 import UIKit
+import CoreData
 
-class TaskTableViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
-
+class TaskTableViewController: UITableViewController {
 
     // Outlet taskTableView
     @IBOutlet var taskTableView: UITableView!
-
+    // Outlet checkboxu
+    @IBAction func checker(sender: UIButton) {
+        // Znegujeme stavajici hodnotu na false
+        arrayOfTasks[sender.tag].check = !arrayOfTasks[sender.tag].check
+        // Upravime obrazek
+        changeCheckImg(arrayOfTasks[sender.tag].check, sender: sender.tag)
+        // Reloadneme data
+        tableView.reloadData()
+        //       Todo: 
+        //
+    }
+    
     // Seznam tasku
     var arrayOfTasks = [Task]()
+    
+    // Retreive the managedObjectContext from AppDelegate
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     
     override func viewDidLoad() {
 
         // Mark: - Tvoreni dvou tlacitek v navigacnim baru v pravo
+        // znak u{2699} je ozubene kolecko
+        let rightSettingsBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "\u{2699}", style: UIBarButtonItemStyle.Done, target: self, action: "tabBarSettingsClicked")
         
-        var rightSettingsBarButtonItem:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem:
-            UIBarButtonSystemItem.Action, target: self, action: "tabBarSettingsClicked")
-
-        var rightAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "tabBarAddClicked")
+        let rightAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "tabBarAddClicked")
         
         self.navigationItem.setRightBarButtonItems([rightAddBarButtonItem, rightSettingsBarButtonItem], animated: true)
 
         // inicializace tasku
         self.setupTask()
+    }
 
-
+    // Menime obrazek checkboxu podle boolu
+    func changeCheckImg(checkBool: Bool, sender: Int) {
+        if checkBool {
+            arrayOfTasks[sender].checkImg = "checked.png"
+        } else {
+            arrayOfTasks[sender].checkImg = "unchecked.png"
+        }
     }
 
     // Pridavani tasku pres metodu setupTasks
     
     func setupTask() {
-        arrayOfTasks.append(Task(name: "DU Matika", date: "21.2.2014", color: "green.png", category: "Home", check: "unchecked.png", notification: true))
-        arrayOfTasks.append(Task(name: "DU Dejepis", date: "2.12.2016", color: "purple.png", category: "School", check: "unchecked.png", notification: false))
-        arrayOfTasks.append(Task(name: "DU Ajina", date: "22.1.2017", color: "whiteblue.png", category: "Job", check: "checked.png", notification: true))
+        arrayOfTasks.append(Task(name: "DU Matika", date: "9/23/15, 7:51 PM", color: "green.png", category: "Home", check: false, checkImg: "unchecked.png", notification: true))
+        arrayOfTasks.append(Task(name: "DU Dejepis", date: "9/23/15, 7:51 PM", color: "purple.png", category: "School", check: true, checkImg: "checked.png", notification: false))
+        arrayOfTasks.append(Task(name: "DU Ajina", date: "9/23/15, 7:51 PM", color: "black.png", category: "Job", check: false, checkImg: "unchecked.png", notification: true))
+
+        
+        
+        
+        let jsonObject: [AnyObject] = [
+            ["name":arrayOfTasks[0].name,
+             "date":arrayOfTasks[0].date,
+             "color":arrayOfTasks[0].color,
+             "category":arrayOfTasks[0].category,
+             "check":arrayOfTasks[0].check,
+             "checkImg":arrayOfTasks[0].checkImg,
+             "notification":arrayOfTasks[0].notification
+            
+            ]
+            
+            
+        
+        
+        
+        ]
+        
+        //print("\"name\":\"\()\",\n\"date\":\"\(arrayOfTasks[0].date)\",\n\"color\":\(arrayOfTasks[0].color)\",\n\"category\":\(arrayOfTasks[0].category)\",\n\"check\":\(arrayOfTasks[0].check),\n\"checkImg\":\"\(arrayOfTasks[0].checkImg)\",\n\"notification\":\(arrayOfTasks[0].notification)")
     }
     
     
@@ -64,7 +106,7 @@ class TaskTableViewController: UITableViewController, UITableViewDelegate, UITab
                 let selectedTask = arrayOfTasks[indexPath!.row]
                 taskDetailController.task = selectedTask
             }
-        } 
+        }
     }
     
     // MARK: - Table View nastaveni
@@ -77,13 +119,16 @@ class TaskTableViewController: UITableViewController, UITableViewDelegate, UITab
         return arrayOfTasks.count
     }
 
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let cell: CustomTaskCell = tableView.dequeueReusableCellWithIdentifier("taskCell") as! CustomTaskCell
-
-        let task = arrayOfTasks[indexPath.row]
         
-        cell.setTaskCell(task.name, datum: task.date, barva: task.color, hotovo: task.check)
+        let task = arrayOfTasks[indexPath.row]
+        // Pridame tag kazdemu checkboxu, abychom je pak rozeznali od sebe
+        cell.mainIsDone.tag = indexPath.row
+
+        cell.setTaskCell(task.name, datum: task.date, barva: task.color, hotovo: task.checkImg)
         
         return cell
     }
@@ -99,7 +144,7 @@ class TaskTableViewController: UITableViewController, UITableViewDelegate, UITab
 
     // TaskDetail
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let task = arrayOfTasks[indexPath.row]
+        _ = arrayOfTasks[indexPath.row]
     }
     
     
@@ -107,7 +152,7 @@ class TaskTableViewController: UITableViewController, UITableViewDelegate, UITab
     @IBAction func unwindToMainFromNew(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? TaskViewController, task = sourceViewController.task {
             // Pokud chceme upravit stavajici task
-            if let selectedIndexPath = tableView.indexPathForSelectedRow() {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 arrayOfTasks[selectedIndexPath.row] = task
                 tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: UITableViewRowAnimation.None)
             } // Pokud chceme vytvorit novy task

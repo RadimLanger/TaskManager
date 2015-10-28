@@ -8,7 +8,7 @@
 
 import UIKit
 
-//Pomocna classa pro customTableView
+//Pomocna trida pro customTableView
 
 class CustomTaskCell: UITableViewCell {
 
@@ -17,10 +17,10 @@ class CustomTaskCell: UITableViewCell {
     @IBOutlet weak var mainColor: UIImageView!
     @IBOutlet weak var mainIsDone: UIButton!
     
-    func setTaskCell(jmeno: String, datum: String, barva: String, hotovo: String) {
-        self.mainName.text = jmeno
-        self.mainDate.text = datum
-        self.mainColor.image = UIImage(named: barva)
-        self.mainIsDone.setImage(UIImage(named: hotovo), forState: UIControlState.Normal)
+    func setTaskCell(jmeno: NSString, datum: NSString, barva: NSString, hotovo: NSString) {
+        self.mainName.text = jmeno as String
+        self.mainDate.text = datum as String
+        self.mainColor.image = UIImage(named: barva as String)
+        self.mainIsDone.setImage(UIImage(named: hotovo as String), forState: UIControlState.Normal)
     }
 }

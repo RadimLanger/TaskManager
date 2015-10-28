@@ -1,5 +1,5 @@
 //
-//  PickerViewController.swift
+//  CategoryPickerViewController.swift
 //  Task Manager
 //
 //  Created by Radim Langer on 18/09/15.
@@ -8,16 +8,13 @@
 
 import UIKit
 
-// Abychom mohli predavat data z obou pickeru
-protocol changeDateCatValuesDelegate: class {
-    func changeCategory(toValue: String)
-//    func changeDate(toValue: String)
-}
+class CategoryPickerViewController: UIViewController, UIPickerViewDelegate {
 
-class PickerViewController: UIViewController, UIPickerViewDelegate {
-
-    weak var delegate: changeDateCatValuesDelegate?
-    var categorySelected: String = ""
+    @IBOutlet weak var categoryPicker: UIPickerView!
+    
+    weak var delegate: changeDateCategValuesDelegate?
+    // Pres delegaci posilame nazev tlacitka category
+    var categorySelected: String?
 
     // Pocatecni kategorie
     var categories = ["School", "Home", "Job", "Free time"]
@@ -27,17 +24,17 @@ class PickerViewController: UIViewController, UIPickerViewDelegate {
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
-    // Kolik kategorii tam je
+    // Kolik kategorii v seznamu je
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+
         return categories.count
     }
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return categories[row]
     }
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
         // Jaky radek vybereme, ten se pak nastavi pro tlacitko kategorie v TaskTableViewControlleru
         categorySelected = categories[row]
-        println(categorySelected)
     }
     
     @IBAction func cancel(sender: UIButton) {
@@ -45,15 +42,16 @@ class PickerViewController: UIViewController, UIPickerViewDelegate {
     }
 
     @IBAction func confirm(sender: UIButton) {
-        delegate?.changeCategory(categorySelected)
-        dismissViewControllerAnimated(true, completion: nil)
-
+        delegate?.changeCategory(categorySelected!)
     }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Zjistujeme na ktere pozici je
+        let defaultRowIndex = categories.indexOf((categorySelected!))
+        // Defaultni pozice pickeru
+        categoryPicker.selectRow(defaultRowIndex!, inComponent: 0, animated: false)
         // Do any additional setup after loading the view.
     }
 
