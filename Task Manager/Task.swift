@@ -27,6 +27,4 @@ class Task {
         self.checkImg = checkImg
         self.notification = notification
     }
-    
-    
 }

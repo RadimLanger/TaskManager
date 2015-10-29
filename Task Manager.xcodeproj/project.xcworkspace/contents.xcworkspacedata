@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Task Manager.xcodeproj">
+      location = "self:/Users/nirdian/Desktop/Task Manager/Task Manager.xcodeproj">
    </FileRef>
 </Workspace>

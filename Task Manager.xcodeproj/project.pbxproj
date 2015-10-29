@@ -10,13 +10,17 @@
 		0A41C6A21BA80F4A00715531 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41C6A11BA80F4A00715531 /* Task.swift */; };
 		0A41C6A41BA813E200715531 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41C6A31BA813E200715531 /* TaskViewController.swift */; };
 		0A41C6A81BA88BA000715531 /* CustomTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41C6A71BA88BA000715531 /* CustomTaskCell.swift */; };
-		0A4B6A6B1BAC244600372868 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4B6A6A1BAC244600372868 /* PickerViewController.swift */; };
+		0A4B6A6B1BAC244600372868 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4B6A6A1BAC244600372868 /* CategoryPickerViewController.swift */; };
 		0A8EF5681BA7047A0073588F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8EF5671BA7047A0073588F /* AppDelegate.swift */; };
 		0A8EF56F1BA7047A0073588F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A8EF56E1BA7047A0073588F /* Images.xcassets */; };
 		0A8EF5721BA7047A0073588F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A8EF5701BA7047A0073588F /* LaunchScreen.xib */; };
 		0A8EF57E1BA7047A0073588F /* Task_ManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8EF57D1BA7047A0073588F /* Task_ManagerTests.swift */; };
 		0A8EF5881BA734BC0073588F /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8EF5871BA734BC0073588F /* TaskTableViewController.swift */; };
-		0A8EF58B1BA73B5E0073588F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A8EF5891BA73B5E0073588F /* Main.storyboard */; };
+		0AE1C3C51BB14F7B00EE54B7 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE1C3C41BB14F7B00EE54B7 /* DatePickerViewController.swift */; };
+		0AE1C3C71BB155EA00EE54B7 /* Protokoly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE1C3C61BB155EA00EE54B7 /* Protokoly.swift */; };
+		0AE1C3D01BB1B0C300EE54B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AE1C3CE1BB1B0C300EE54B7 /* Main.storyboard */; };
+		0AE1C40B1BB45BDF00EE54B7 /* TaskManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AE1C4091BB45BDF00EE54B7 /* TaskManager.xcdatamodeld */; };
+		0AE1C40F1BB45FE100EE54B7 /* LogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE1C40E1BB45FE100EE54B7 /* LogItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,17 +37,21 @@
 		0A41C6A11BA80F4A00715531 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		0A41C6A31BA813E200715531 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		0A41C6A71BA88BA000715531 /* CustomTaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTaskCell.swift; sourceTree = "<group>"; };
-		0A4B6A6A1BAC244600372868 /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		0A4B6A6A1BAC244600372868 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		0A8EF5621BA7047A0073588F /* Task Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Task Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A8EF5661BA7047A0073588F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A8EF5671BA7047A0073588F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A8EF56E1BA7047A0073588F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0A8EF5711BA7047A0073588F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		0A8EF5771BA7047A0073588F /* Task ManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Task ManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A8EF5771BA7047A0073588F /* Task Manager.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Task Manager.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A8EF57C1BA7047A0073588F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A8EF57D1BA7047A0073588F /* Task_ManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task_ManagerTests.swift; sourceTree = "<group>"; };
 		0A8EF5871BA734BC0073588F /* TaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
-		0A8EF58A1BA73B5E0073588F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0AE1C3C41BB14F7B00EE54B7 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerViewController.swift; path = ../DatePickerViewController.swift; sourceTree = "<group>"; };
+		0AE1C3C61BB155EA00EE54B7 /* Protokoly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protokoly.swift; sourceTree = "<group>"; };
+		0AE1C3CF1BB1B0C300EE54B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0AE1C40A1BB45BDF00EE54B7 /* TaskManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskManager.xcdatamodel; sourceTree = "<group>"; };
+		0AE1C40E1BB45FE100EE54B7 /* LogItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogItem.swift; path = ../LogItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				0A8EF5621BA7047A0073588F /* Task Manager.app */,
-				0A8EF5771BA7047A0073588F /* Task ManagerTests.xctest */,
+				0A8EF5771BA7047A0073588F /* Task Manager.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,14 +93,18 @@
 		0A8EF5641BA7047A0073588F /* Task Manager */ = {
 			isa = PBXGroup;
 			children = (
+				0AE1C40E1BB45FE100EE54B7 /* LogItem.swift */,
 				0A8EF5671BA7047A0073588F /* AppDelegate.swift */,
 				0A8EF5871BA734BC0073588F /* TaskTableViewController.swift */,
 				0A41C6A31BA813E200715531 /* TaskViewController.swift */,
-				0A4B6A6A1BAC244600372868 /* PickerViewController.swift */,
+				0A4B6A6A1BAC244600372868 /* CategoryPickerViewController.swift */,
+				0AE1C3C41BB14F7B00EE54B7 /* DatePickerViewController.swift */,
 				0A41C6A11BA80F4A00715531 /* Task.swift */,
 				0A41C6A71BA88BA000715531 /* CustomTaskCell.swift */,
-				0A8EF5891BA73B5E0073588F /* Main.storyboard */,
+				0AE1C3C61BB155EA00EE54B7 /* Protokoly.swift */,
+				0AE1C3CE1BB1B0C300EE54B7 /* Main.storyboard */,
 				0A8EF56E1BA7047A0073588F /* Images.xcassets */,
+				0AE1C4091BB45BDF00EE54B7 /* TaskManager.xcdatamodeld */,
 				0A8EF5701BA7047A0073588F /* LaunchScreen.xib */,
 				0A8EF5651BA7047A0073588F /* Supporting Files */,
 			);
@@ -159,7 +171,7 @@
 			);
 			name = "Task ManagerTests";
 			productName = "Task ManagerTests";
-			productReference = 0A8EF5771BA7047A0073588F /* Task ManagerTests.xctest */;
+			productReference = 0A8EF5771BA7047A0073588F /* Task Manager.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -168,7 +180,9 @@
 		0A8EF55A1BA7047A0073588F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Radim Langer";
 				TargetAttributes = {
 					0A8EF5611BA7047A0073588F = {
@@ -204,7 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A8EF58B1BA73B5E0073588F /* Main.storyboard in Resources */,
+				0AE1C3D01BB1B0C300EE54B7 /* Main.storyboard in Resources */,
 				0A8EF5721BA7047A0073588F /* LaunchScreen.xib in Resources */,
 				0A8EF56F1BA7047A0073588F /* Images.xcassets in Resources */,
 			);
@@ -224,11 +238,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A4B6A6B1BAC244600372868 /* PickerViewController.swift in Sources */,
+				0A4B6A6B1BAC244600372868 /* CategoryPickerViewController.swift in Sources */,
 				0A8EF5881BA734BC0073588F /* TaskTableViewController.swift in Sources */,
+				0AE1C3C51BB14F7B00EE54B7 /* DatePickerViewController.swift in Sources */,
+				0AE1C3C71BB155EA00EE54B7 /* Protokoly.swift in Sources */,
 				0A41C6A21BA80F4A00715531 /* Task.swift in Sources */,
+				0AE1C40F1BB45FE100EE54B7 /* LogItem.swift in Sources */,
 				0A41C6A41BA813E200715531 /* TaskViewController.swift in Sources */,
 				0A8EF5681BA7047A0073588F /* AppDelegate.swift in Sources */,
+				0AE1C40B1BB45BDF00EE54B7 /* TaskManager.xcdatamodeld in Sources */,
 				0A41C6A81BA88BA000715531 /* CustomTaskCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,10 +278,10 @@
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
-		0A8EF5891BA73B5E0073588F /* Main.storyboard */ = {
+		0AE1C3CE1BB1B0C300EE54B7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0A8EF58A1BA73B5E0073588F /* Base */,
+				0AE1C3CF1BB1B0C300EE54B7 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -292,6 +310,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -357,20 +376,24 @@
 		0A8EF5821BA7047A0073588F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Task Manager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com..$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "Task Manager";
 			};
 			name = Debug;
 		};
 		0A8EF5831BA7047A0073588F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Task Manager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com..$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "Task Manager";
 			};
 			name = Release;
 		};
@@ -388,7 +411,8 @@
 				);
 				INFOPLIST_FILE = "Task ManagerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com..$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "Task Manager";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Task Manager.app/Task Manager";
 			};
 			name = Debug;
@@ -403,7 +427,8 @@
 				);
 				INFOPLIST_FILE = "Task ManagerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com..$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "Task Manager";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Task Manager.app/Task Manager";
 			};
 			name = Release;
@@ -439,6 +464,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0AE1C4091BB45BDF00EE54B7 /* TaskManager.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0AE1C40A1BB45BDF00EE54B7 /* TaskManager.xcdatamodel */,
+			);
+			currentVersion = 0AE1C40A1BB45BDF00EE54B7 /* TaskManager.xcdatamodel */;
+			path = TaskManager.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0A8EF55A1BA7047A0073588F /* Project object */;
 }
